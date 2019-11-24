@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.0.0-preview8.19405.7" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.0.1" />
+        <PackageReference Include="Scrutor" Version="3.1.0" />
+        <PackageReference Include="Serilog.AspNetCore" Version="3.1.0" />
+        <PackageReference Include="Serilog.Exceptions" Version="5.3.1" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Folder Include="wwwroot" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Configuration\DependencyInjectionExtension.Application.cs">
+            <DependentUpon>DependencyInjectionExtension.cs</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ukiyo.Application.Contract\Ukiyo.Application.Contract.csproj" />
+      <ProjectReference Include="..\Ukiyo.Application.Implementation\Ukiyo.Application.Implementation.csproj" />
+      <ProjectReference Include="..\Ukiyo.Infrastructure.Contract\Ukiyo.Infrastructure.Contract.csproj" />
+      <ProjectReference Include="..\Ukiyo.Infrastructure.Implementation\Ukiyo.Infrastructure.Implementation.csproj" />
+    </ItemGroup>
+
+</Project>
